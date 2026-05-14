@@ -11,7 +11,7 @@
     "customer": "Rahim Ahmed",
     "quantity": 1,
     "food": "Pizza",
-    "price": 15.0
+    "price": 15
   },
   {
     "id": "3",
@@ -33,5 +33,26 @@
     "quantity": 2,
     "food": "Sandwich",
     "price": 6.5
+  },
+  {
+    "customer": "korim",
+    "food": "apple",
+    "price": 250,
+    "quantity": 1000,
+    "id": "87.31208798303605"
+  },
+  {
+    "customer": "korim",
+    "food": "apple",
+    "price": 250,
+    "quantity": 1000,
+    "id": "77.31374393918026"
+  },
+  {
+    "customer": "korim",
+    "food": "apple",
+    "price": 250,
+    "quantity": 1000,
+    "id": "75"
   }
 ]

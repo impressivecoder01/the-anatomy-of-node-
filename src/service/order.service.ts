@@ -15,8 +15,8 @@ class OrderService{
             return []
         }
     }
-    private async writeData(data : Order){
-        await fs.writeFile(DB_PATH, JSON.stringify(data))
+    private async writeData(data : Order[]){
+        await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2))
     }
     //GET
     async get(){
@@ -29,7 +29,7 @@ class OrderService{
 
         const newOrder = {
             ...order,
-            id: String(Math.random() * 100)
+            id: String(Math.floor(Math.random()* 100))
         }
         data.push(newOrder)
         await this.writeData(data)
@@ -37,4 +37,10 @@ class OrderService{
 }
 
 const OrderServices = new OrderService()
+await OrderServices.create({
+    customer : "korim",
+    food: "apple",
+    price: 250,
+    quantity: 1000
+})
 //  OrderServices.readData()
