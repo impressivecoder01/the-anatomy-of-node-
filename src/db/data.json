@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "customer": "Alice Johnson",
+    "quantity": 2,
+    "food": "Burger",
+    "price": 12.5
+  },
+  {
+    "id": "2",
+    "customer": "Rahim Ahmed",
+    "quantity": 1,
+    "food": "Pizza",
+    "price": 15.0
+  },
+  {
+    "id": "3",
+    "customer": "Maria Garcia",
+    "quantity": 3,
+    "food": "Pasta",
+    "price": 9.75
+  },
+  {
+    "id": "4",
+    "customer": "John Smith",
+    "quantity": 4,
+    "food": "Fried Chicken",
+    "price": 8.25
+  },
+  {
+    "id": "5",
+    "customer": "Sadia Khan",
+    "quantity": 2,
+    "food": "Sandwich",
+    "price": 6.5
+  }
+]

@@ -9,10 +9,10 @@ const server = createServer((req, res)=> {
     if(url === '/'){
         // res.writeHead(200,{"content-type": "application/json"})
         // res.end(JSON.stringify({message: 'heloo'}))
-        sendResponse(res, {message: "welcome to our server"}, 200)
+        sendResponse(res, {message: "welcome to our Foodi server"}, 200)
         return
     }
-            sendResponse(res, {message: "not found "}, 404)
+        sendResponse(res, {message: "not found "}, 404)
 
     // res.writeHead(200,{"content-type": "application/json"})
     //     res.end(JSON.stringify({message: 'not here'}))
