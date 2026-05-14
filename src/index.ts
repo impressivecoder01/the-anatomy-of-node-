@@ -1,5 +1,6 @@
 import { createServer } from "http";
 import { sendResponse } from "./utilies";
+import { orderRoute } from "./routes/order.route";
 
 
 const server = createServer((req, res)=> {
@@ -11,6 +12,9 @@ const server = createServer((req, res)=> {
         // res.end(JSON.stringify({message: 'heloo'}))
         sendResponse(res, {message: "welcome to our Foodi server"}, 200)
         return
+    }
+    else if(url.startsWith("/order")){
+        orderRoute(req, res)
     }
         sendResponse(res, {message: "not found "}, 404)
 
