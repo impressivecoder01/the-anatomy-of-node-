@@ -41,10 +41,22 @@ class OrderService{
         await this.writeData(data)
     }
     // update
-    async update(id: string, updates: Partial<Omit<Order,"id">>): Promise<Order[]> | null{
+    async update(id: string, updates: Partial<Omit<Order,"id">>): Promise<Order> | null{
         const data = await this.readData()
         const i = data.findIndex(order => order.id === id)
         if( i === -1) return null
+        data[i] = {...data[i], ...updates} as Order
+        await this.writeData(data)
+        return data[i]
+    }
+    // delete 
+    async delete(id: string){
+        const data = await this.readData()
+        const i = data.findIndex(order => order.id === id)
+        if( i === -1) return false
+        data.splice(i, 1)
+        await this.writeData(data)
+        return true
     }
 }
 
