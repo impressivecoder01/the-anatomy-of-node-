@@ -23,6 +23,12 @@ class OrderService{
         const data = await this.readData()
         return data
     }
+    // get by id
+    async getById(id: string){
+        const data = await this.readData()
+        return data.find(order => order.id === id) || null
+
+    }
     //create
     async create(order: Omit<Order, "id">){
         const data = await this.readData()
@@ -34,13 +40,20 @@ class OrderService{
         data.push(newOrder)
         await this.writeData(data)
     }
+    // update
+    async update(id: string, updates: Partial<Omit<Order,"id">>): Promise<Order[]> | null{
+        const data = await this.readData()
+        const i = data.findIndex(order => order.id === id)
+        if( i === -1) return null
+    }
 }
 
 const OrderServices = new OrderService()
-await OrderServices.create({
-    customer : "korim",
-    food: "apple",
-    price: 250,
-    quantity: 1000
-})
+// await OrderServices.create({
+//     customer : "korim",
+//     food: "apple",
+//     price: 250,
+//     quantity: 1000
+// })
+console.log(await OrderServices.getById("2"));
 //  OrderServices.readData()

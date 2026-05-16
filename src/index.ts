@@ -4,6 +4,7 @@ import { orderRoute } from "./routes/order.route";
 // conceptual session
 
 const server = createServer((req, res)=> {
+    // console.log(req,res);
     // res.writeHead(200,{"Content-Type": "application/json"})
 // res.end(JSON.stringify({message: 'heloo'}))
     const url = req.url ?? "/"
