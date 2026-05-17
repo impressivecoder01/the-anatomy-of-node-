@@ -41,7 +41,7 @@ class OrderService{
         await this.writeData(data)
     }
     // update
-    async update(id: string, updates: Partial<Omit<Order,"id">>): Promise<Order> | null{
+    async update(id: string, updates: Partial<Omit<Order,"id">>): Promise<Order | null>{
         const data = await this.readData()
         const i = data.findIndex(order => order.id === id)
         if( i === -1) return null
@@ -60,12 +60,13 @@ class OrderService{
     }
 }
 
-const OrderServices = new OrderService()
+export const OrderServices = new OrderService()
+OrderServices.update("2", {customer: "k"})
 // await OrderServices.create({
 //     customer : "korim",
 //     food: "apple",
 //     price: 250,
 //     quantity: 1000
 // })
-console.log(await OrderServices.getById("2"));
+// console.log(await OrderServices.getById("2"));
 //  OrderServices.readData()

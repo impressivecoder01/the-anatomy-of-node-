@@ -1,9 +1,10 @@
 import { createServer } from "http";
 import { sendResponse } from "./utilies";
 import { orderRoute } from "./routes/order.route";
+import type { Req } from "./type";
 // conceptual session
 
-const server = createServer((req, res)=> {
+const server = createServer(async (req, res)=> {
     // console.log(req,res);
     // res.writeHead(200,{"Content-Type": "application/json"})
 // res.end(JSON.stringify({message: 'heloo'}))
@@ -15,7 +16,7 @@ const server = createServer((req, res)=> {
         return
     }
     else if(url.startsWith("/order")){
-        orderRoute(req, res)
+       await orderRoute(req as Req, res)
     }
         sendResponse(res, {message: "not found "}, 404)
 
